@@ -1,0 +1,125 @@
+.hero
+	position: relative
+	&::after
+		content: ''
+		position: absolute
+		left: 0
+		top: 100%
+		z-index: -1
+		width: 100%
+		height: 130px
+		+image('../img/hero-bottom-half-shadow.png')
+		background-size: 100% 100%
+		+r(768)
+			top: calc(100% - 20px)
+			height: 65px
+	&__wrapper
+		position: relative
+		z-index: 1
+		padding: 50px 0
+		box-sizing: border-box
+		min-height: calc(100vh - 180px - 18px)
+		height: auto
+		text-align: center
+		background: url('../img/hero.png') center no-repeat, url('../img/hero-pattern.png') center no-repeat
+		border-bottom: 2px solid #c3a481
+		+cover
+		+r(1400)
+			padding: 35px 0
+			min-height: calc(100vh - 120px - 18px)
+		+r(992)
+			padding: 40px 0
+			min-height: 550px
+		+r(768)
+			+image('../img/hero-mobile.png')
+		+r(576)
+			min-height: 400px
+	&-title
+		margin: 0 auto 35px
+		padding: 0
+		text-align: center
+		+r(1400)
+			margin-bottom: 20px
+		+r(992)
+			margin-bottom: 60px
+		+r(768)
+			margin-bottom: 40px
+		&__subtitle
+			display: inline-block
+			padding: 5px 50px 0
+			font: 700 78px/78px $almoni
+			color: #ffffff
+			background-color: $orange
+			+r(1400)
+				font-size: 58px
+				line-height: 58px
+			+r(992)
+				font-size: 50px
+			+r(768)
+				padding: 5px 25px 0
+				font-size: 40px
+				line-height: 44px
+			+r(576)
+				padding: 5px 10px 0
+				font-size: 26px
+				line-height: 30px
+		&__title
+			display: inline-block
+			padding: 10px 50px 0
+			font: 400 116px/116px $almoni
+			color: $orange
+			background-color: #ffffff
+			+r(1400)
+				font-size: 96px
+				line-height: 96px
+			+r(992)
+				font-size: 74px
+				line-height: 78px
+			+r(768)
+				padding: 10px 25px 0
+				font-size: 64px
+				line-height: 68px
+			+r(576)
+				padding: 10px 15px 0
+				font-size: 36px
+				line-height: 40px
+	.arrow-link
+		position: absolute
+		bottom: 0%
+		left: 50%
+		z-index: 2
+		transform: translate(-50%, 50%)
+		+r(768)
+			display: none
+
+.btn-open-video
+	display: inline-block
+	vertical-align: middle
+	box-sizing: border-box
+	width: 175px
+	height: 175px
+	font-size: 0
+	border: 6px solid #fff
+	background-color: #0f4876
+	border-radius: 50%
+	+image('../img/icon-play.png')
+	background-position: 60% center
+	background-size: 50%
+	background-repeat: no-repeat 
+	cursor: pointer
+	transition: .25s
+	+r(1400)
+		width: 125px
+		height: 125px
+	+r(992)
+		width: 155px
+		height: 155px
+	+r(768)
+		width: 100px
+		height: 100px
+	&:hover
+		background-color: darken(#0f4876, 5)
+	&:focus
+		outline: none
+		box-shadow: 0 0 5px 3px #0f4876
+	

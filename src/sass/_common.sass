@@ -1,0 +1,22 @@
+body
+	direction: rtl
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+	background: #FFF
+	text-align: right
+	line-height: 1.4
+	background-repeat: repeat
+	+image('../img/pattern-2.jpg')
+	&.hide-scroll
+		height: 100%
+		overflow: hidden
+
+.hide
+	position: absolute
+	z-index: -1
+	visibility: hidden
+	opacity: 0
+
+iframe
+	border: 0

@@ -1,0 +1,6 @@
+ProjectTitle: hellmannsburger
+
+PageList:
+- file: page.html
+- file: index.html
+  ready: 50

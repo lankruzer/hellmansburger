@@ -1,0 +1,42 @@
+.arrow-link
+	position: relative
+	display: inline-block
+	vertical-align: middle
+	width: 33px
+	height: 33px
+	font-size: 0
+	text-decoration: none
+	border-radius: 50%
+	background-color: #000000
+	cursor: pointer
+	&_up
+		transform: rotate(180deg)
+	&::before,
+	&::after
+		content: ''
+		position: absolute
+		top: 50%
+		width: 3px
+		height: 12px
+		background-color: #fff
+		transition: .25s
+		transform-origin: center
+	&::before
+		left: 50%
+		transform: translate(60%, -50%) rotate(45deg)
+	&::after
+		right: 50%
+		transform: translate(-60%, -50%) rotate(-45deg)
+	&:hover
+		&::before
+			height: 17px
+			background-color: #c3a481
+			transform: translate(60%, -50%) rotate(25deg)
+		&::after
+			height: 17px
+			background-color: #c3a481
+			transform: translate(-60%, -50%) rotate(-25deg)
+
+.arrow-link-wrapper
+	margin-bottom: 30px
+	text-align: center

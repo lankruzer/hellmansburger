@@ -1,0 +1,147 @@
+---
+title: Index page | Hellmann'sburger
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+
+<!-- begin hero -->
+<section class="hero">
+	<div class="hero__wrapper d-flex align-items-center">
+		<div class="container">
+			<h1 class="hero-title d-flex flex-column justify-content-center align-items-center">
+				<span class="hero-title__subtitle">סדרת מנות המבורגר עסיסיות</span>
+				<span class="hero-title__title">שהולכות טוב עם כדורגל</span>
+			</h1>
+			<button type="button" class="btn-open-video" data-link="https://www.youtube.com/embed/A_cyEWLdHYc">Play</button>
+		</div>
+	</div>
+	<a href="#burger-club" class="arrow-link link-go-to">Down</a>
+</section>
+<!-- end hero -->
+
+<!-- begin burger-club -->
+<section id="burger-club" class="burger-club">
+	<div class="container">
+		<h2 class="burger-club__title">Hellmann’s Burger Club</h2>
+		<p>אין כמו המבורגר איכותי או כריך עסיסי כדי לגרום לכם לרצות לטעום וליהנות מחוויה מעוררת חושים! 
+במגוון רחב של מסעדות ברחבי הארץ יחכו לכם במהלך חודש המונדיאל המבורגרים וכריכים מיוחדים ומסעירים</p>
+		<h3 class="burger-club__title-bg title-bg title-bg_big">רשימת המסעדות המשתתפות בפעילות</h3>
+	</div>
+</section>
+<!-- end burger-club -->
+
+<!-- begin search -->
+<div class="search container">
+	<div class="search__line"></div>
+	<ul class="search-list">
+		<li class="search-list-li"><a href="#" class="search-list-li__link">צפון </a></li>
+		<li class="search-list-li"><a href="#" class="search-list-li__link">השרון</a></li>
+		<li class="search-list-li"><a href="#" class="search-list-li__link">מרכז</a></li>
+		<li class="search-list-li"><a href="#" class="search-list-li__link">ירושלים</a></li>
+		<li class="search-list-li"><a href="#" class="search-list-li__link">דרום</a></li>
+		<li class="search-list-li">
+			<form action="#" method="post" class="search-form">
+				<label class="search-form__label">
+					<input type="text" name="search" class="search-form__input" required="">
+				</label>
+				<button class="search-form__button search-form__button_submit" type="submit">Search</button>
+				<button class="search-form__button search-form__button_open" type="button">Search</button>
+			</form>
+		</li>
+	</ul>
+	<div class="search__line"></div>
+</div>
+<!-- end search -->
+
+
+<!-- begin restaurant-chain -->
+<div class="container">
+	{% import "data/data.html" as data %}
+	
+	
+	{% for restaurantChain in data.restaurantChain %}
+		<section class="restaurant-chain d-flex flex-wrap">
+			<h2 class="hide">{{restaurantChain.chainName}}</h2>
+			<div class="restaurant-chain-img col-12 col-sm-6 col-lg-3">
+				<img src="{{restaurantChain.img}}" class="restaurant-chain-img__img" alt="{{restaurantChain.imgAlt}}">	
+			</div>
+
+			<div class="col-12 col-lg-9">
+				<div class="row">
+					{% for restaurant in restaurantChain.restaurant %}
+						<article class="restaurant col-12 col-sm-6 col-lg-6 col-xl-4">
+							<h2 class="restaurant-title">
+								<span class="restaurant-title__chain">{{restaurantChain.chainName}}</span>
+								<span class="restaurant-title__restaurant">({{restaurant.resName}})</span>
+							</h2>
+							<div class="restaurant-info">
+								<address class="restaurant-info__address">
+									{{restaurant.address}}
+								</address>
+								|
+								<span class="restaurant-info__cost">{{restaurant.cost}}*</span>
+							</div>
+							<div class="restaurant-buttons">
+								<a href={{restaurant.pageRestourant}} class="btn">תפריט</a>
+								<button class="btn btn-open-restourant" data-link={{restaurant.iframeSrc}}>הזמנת שולחן</button>
+							</div>
+						</article>
+					{% endfor %}	
+				</div>
+			</div>
+		</section>
+	{% endfor %}
+<!-- </div> -->
+<!-- end restaurant-chain -->
+
+<!-- begin restaurants -->
+<!-- <div class="container"> -->
+	{% import "data/data.html" as data %}
+	
+	
+	{% for restaurants in data.restaurantRegions %}
+		<section class="restaurant-chain restaurant-chain_without-bg">
+			<h2 class="restaurant-chain__title title-bg">{{restaurants.region}}</h2>
+
+			<div class="restaurant-chain__wrapper col-12 d-flex flex-wrap">
+				{% for restaurant in restaurants.restaurant %}
+					<article class="restaurant restaurant_without-border col-12 col-sm-6 col-lg-4">
+						<div class="row d-flex align-items-center">
+							<a href={{restaurant.pageRestourant}} class="restaurant-logo col-12 col-xl-4">
+								<img class="restaurant-logo__img" src={{restaurant.logo}} alt={{restaurant.logoAlt}}>
+							</a>
+
+							<div class="col-12 col-xl-8">
+								<h2 class="restaurant-title">
+									<span class="restaurant-title__chain">{{restaurant.resName}}</span>
+								</h2>
+
+								<div class="restaurant-info">
+									<address class="restaurant-info__address">
+										{{restaurant.address}}
+									</address>
+									|
+									<span class="restaurant-info__cost">{{restaurant.cost}}*</span>
+								</div>
+								<div class="restaurant-buttons">
+									<a href={{restaurant.pageRestourant}} class="btn">תפריט</a>
+									<button class="btn btn-open-restourant" type="button" data-link={{restaurant.iframeSrc}}>הזמנת שולחן</button>
+								</div>
+							</div>
+						</div>
+					</article>
+				{% endfor %}	
+			</div>
+		</section>
+	{% endfor %}
+</div>
+<!-- end restaurants -->
+
+<!-- begin arrow-link-wrapper -->
+<div class="arrow-link-wrapper">
+	<a href="#burger-club" class="arrow-link arrow-link_up link-go-to">Up</a>	
+</div>
+<!-- end arrow-link-wrapper -->
+
+{% endblock %}

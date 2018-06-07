@@ -1,0 +1,58 @@
+{% import "partials/_mixins.html" as mixins %}
+<!doctype html>
+<html dir="rtl" lang="he">
+    <head>
+        <meta charset="utf-8">
+        <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#fff">
+        <meta name="format-detection" content="telephone=no">
+        <link rel="stylesheet" media="all" href="css/app.css">
+        {# {% include "../partials/_media-tags.html" %} #}
+    </head>
+  <body>
+
+    <!-- begin header -->
+    {% include "partials/_header.html" %}
+    <!-- end header -->
+    
+    <!-- begin main -->
+    <main class="main">
+        {% block content %}
+        {% endblock %}
+    </main> 
+    <!-- end main -->
+
+    <!-- begin footer -->
+    {% include "partials/_footer.html" %}
+    <!-- end footer -->
+
+    <!-- begin popup's -->
+    <div class="overlay">
+        <div class="overlay__content">
+            <!-- begin hero video -->
+            <div class="popup-form popup-form__video">
+                <button class="popup-form__close" type="button">Close</button>
+                <span class="popup-form__loader">loading...</span>
+                <iframe allowfullscreen></iframe>
+            </div>
+            <!-- end hero video -->
+
+            <!-- begin restourant iframe -->
+            <div class="popup-form popup-form__restourant">
+                <button class="popup-form__close" type="button">Close</button>
+                <span class="popup-form__loader">loading...</span>
+                <iframe></iframe>
+            </div>
+            <!-- end restourant iframe -->
+        </div>
+    </div>
+    <!-- end popup's -->
+
+    <!-- BEGIN scripts -->
+    <script src="js/app.js"></script>
+    <!-- END scripts -->
+
+    </body>
+</html>

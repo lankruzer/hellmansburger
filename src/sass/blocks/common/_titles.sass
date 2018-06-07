@@ -1,0 +1,32 @@
+.title-bg
+	display: inline-block
+	vertical-align: middle
+	margin: 0 auto
+	padding: 5px 70px 10px
+	min-width: 286px
+	width: auto
+	text-align: center
+	font: 700 35px/62px $almoni
+	color: #fff
+	+image('../img/title-bg-2.png')
+	background-size: 100% 100%
+	+r(992)
+		padding: 5px 60px 10px
+		line-height: 45px
+	+r(576)
+		padding: 5px 20px 15px
+		font-size: 24px
+		line-height: 28px
+	&_big
+		padding: 5px 70px 15px
+		font: 700 48px/72px $almoni
+		+image('../img/title-bg-1.png')
+		+r(1200)
+			padding: 5px 50px 10px
+			font-size: 38px
+			line-height: 62px
+		+r(768)
+			padding: 5px 25px 10px
+			width: 100%
+			font-size: 34px
+			line-height: 40px

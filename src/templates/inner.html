@@ -1,0 +1,53 @@
+---
+title: inner rest recipe | Hellmann'sburger
+---
+{% extends "layouts/_layout.html" %}
+
+{% block content %}
+	
+	<section id="inner-hero" class="inner-hero">
+		<div class="container d-flex justify-content-center">
+			<div class="col-12 col-lg-10 col-xl-8">
+				<div class="inner-hero-content">
+					<div class="d-flex flex-column flex-sm-row justify-content-center align-items-center">
+						<div class="inner-hero-content-logo">
+							<img class="inner-hero-content-logo__img" src="img/logo-3.png" alt="logo">
+						</div>
+						<div>
+							<h1 class="inner-hero-content__title">קינג ג’ורג’ (סניף רמת ישי)</h1>
+							<address class="inner-hero-content__address">האקליפטוס 3 רמת ישי - סטריט מול</address>
+						</div>
+					</div>
+				</div>
+				<div class="inner-hero-buttons d-flex flex-column flex-sm-row flex-wrap justify-content-between align-items-center">
+					<button class="btn-inner btn-inner_orange btn-open-restourant" type="button" data-link="123">הזמנת שולחן ></button>
+					<a href="index.html" class="btn-inner btn-inner_black">חזרה לרשימת מסעדות ></a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="inner-recipe">
+		<div class="inner-recipe__content container">
+			<div class="row d-flex flex-wrap">
+				{% import "data/data.html" as data %}
+	
+				{% for recipe in data.recipe %}
+					<article class="recipe col-12 col-sm-6 col-lg-4">
+						<div class="recipe-img">
+							<img class="recipe-img__img" src="{{recipe.img}}" alt="{{recipe.imgAlt}}">
+						</div>
+						<h2 class="recipe__title">{{recipe.title}}</h2>
+					</article>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+
+	<!-- begin arrow-link-wrapper -->
+	<div class="arrow-link-wrapper">
+		<a href="#inner-hero" class="arrow-link arrow-link_up link-go-to">Up</a>	
+	</div>
+	<!-- end arrow-link-wrapper -->
+
+{% endblock %}

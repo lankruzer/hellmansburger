@@ -1,0 +1,27 @@
+.footer
+	margin: auto auto 0
+	padding: 18px 0
+	width: 100%
+	text-align: center
+	color: #fff
+	background-color: #000000
+	&__p
+		margin: 0
+		font: 400 19px/25px $almoni
+		color: #fff
+		+r(992)
+			font-size: 16px
+			line-height: 21px
+	&__link
+		font: 400 19px/25px $almoni
+		color: #fff
+		border-bottom: 2px solid rgba(255, 255, 255, .6)
+		transition: .25s
+		+r(992)
+			font-size: 16px
+			line-height: 21px
+		&:hover,
+		&:focus
+			color: #fff
+			text-decoration: none
+			border-bottom: 2px solid rgba(255, 255, 255, 1)

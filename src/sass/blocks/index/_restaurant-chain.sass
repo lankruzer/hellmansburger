@@ -1,0 +1,113 @@
+.restaurant-chain
+	position: relative
+	margin-bottom: 50px
+	padding: 35px 0 10px
+	background-color:  rgba(255, 255, 255, .66)
+	&::before
+		content: ''
+		position: absolute
+		bottom: 0	
+		right: 0
+		width: 22%
+		height: 100%
+		+image('../img/item-bg.png')
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: right bottom
+		+r(992)
+			top: 30px
+			right: auto
+			left: 0
+			bottom: auto
+			width: 50%
+			transform: scaleX(-1)
+			background-position: left top
+		+r(576)
+			display: none
+	&_hide
+		display: none!important
+	&_without-bg
+		padding-top: 0
+		&::before
+			display: none
+		&:last-of-type
+			margin-bottom: 30px
+		+r(768)
+			padding-top: 60px
+	&-img
+		text-align: center
+		+r(992)
+			margin-bottom: 40px	
+		&__img
+			display: inline-block
+			vertical-align: top
+			max-width: 100%
+			height: auto
+	&__wrapper
+		+r(992)
+			padding-left: 0
+			padding-right: 0
+	&__title
+		display: inline-block
+		vertical-align: top
+		margin-right: 50%
+		margin-bottom: 5px
+		transform: translate(50%, -40%)
+		+r(768)
+			position: absolute
+			top: 0
+			right: 50%
+			margin: 0
+
+.restaurant
+	margin-bottom: 50px
+	box-sizing: border-box
+	border-right: 1px solid #708b92
+	+r(992)
+		text-align: center
+		border-right: 0
+	&_hide
+		display: none!important
+	&_without-border
+		border: 0
+		+r(1200)
+			text-align: center
+	&-logo
+		margin-bottom: 10px
+		padding-left: 0
+		+r(1200)
+			padding-left: 15px
+		&:hover
+			text-decoration: none
+		&__img
+			max-width: 100%
+			max-height: 120px
+			width: auto
+			height: auto
+	&-title
+		margin: 0
+		font: 400 26px/26px $almoni
+		color: #2b2b2b
+		&__chain
+			font-weight: 700
+		&__restaurant
+			font-weight: 400
+	&-info
+		margin-bottom: 5px
+		font: 400 19px/24px $almoni
+		color: #2b2b2b
+		&__address
+			display: inline
+		&__cost
+			color: #2b2b2b
+			text-decoration: none
+			transition: .25s
+			&:hover
+				color: darken(#2b2b2b, 10)
+				text-decoration: underline
+			&:focus
+				color: darken(#2b2b2b, 20)
+				text-decoration: underline
+	&-buttons
+		.btn
+			margin: 0 4px 4px
